@@ -1,0 +1,18 @@
+{
+    "Outside": [
+        {
+            "name": "inside",
+            "type": "Inside"
+        },
+        {
+            "name": "number",
+            "type": "uint256"
+        }
+    ],
+    "Inside": [
+        {
+            "name": "salt",
+            "type": "bytes32"
+        }
+    ]
+}
