@@ -12,6 +12,7 @@ contract DomainSeparatorManagerTest is Test {
 
     function setUp() public {
         dsm = new DomainSeparatorManager();
+        dsm.register("Counter", "1", 1, address(this), bytes32(0));
     }
 
     function test_register() public {

@@ -1,0 +1,21 @@
+{
+    "name": "js-scripts",
+    "version": "1.0.0",
+    "description": "JavaScript scripts for FFI with Foundry",
+    "scripts": {
+        "build": "npm i && node build.js && rm -rf node_modules",
+        "sign-typed-data": "node dist/sign-typed-data.js",
+        "watch": "npm install && nodemon src/sign-typed-data.ts"
+    },
+    "dependencies": {
+        "ox": "^0.8.2",
+        "viem": "2.23.15"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.24",
+        "esbuild": "^0.21.3",
+        "nodemon": "^3.1.10",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3"
+    }
+}

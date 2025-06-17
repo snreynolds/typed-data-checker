@@ -10,6 +10,31 @@ contract DomainSeparatorManager {
 
     Vm constant vm = Vm(address(uint160(uint256(keccak256("hevm cheat code")))));
 
+    function register(string memory name, string memory version, uint256 chainId, address verifyingContract) public {
+        string memory json = string(
+            abi.encodePacked(
+                "{",
+                '"name":"',
+                name,
+                '",',
+                '"version":"',
+                version,
+                '",',
+                '"chainId":',
+                vm.toString(chainId),
+                ",",
+                '"verifyingContract":"',
+                vm.toString(verifyingContract),
+                '"',
+                "}"
+            )
+        );
+
+        // Create the directory if it doesn't exist
+        vm.createDir("test/json", true);
+        vm.writeFile("test/json/domain.json", json);
+    }
+
     function register(
         string memory name,
         string memory version,
